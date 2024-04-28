@@ -1,4 +1,4 @@
-# CLAI - AI Assistant for Command Line Commands
+# CLAI - AI Assistant for CLI Commands
 
 CLAI is an AI assistant for command line commands. It is designed to help users to find commands more efficiently. 
 How often do you struggle to remember how to execute a specific command? Or what the right flags and arguments are?
