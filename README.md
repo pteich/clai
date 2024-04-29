@@ -1,11 +1,11 @@
 # CLAI - AI Assistant for CLI Commands
 
-CLAI is an AI assistant for command line commands. It is designed to help users to find commands more efficiently. 
+CLAI is an AI assistant for CLI commands. It is designed to help users to work with CLI commands more efficiently. 
 How often do you struggle to remember how to execute a specific command? Or what the right flags and arguments are?
-Just write in natural language what you want to do, and CLAI will try to find the right command.
+Just write in natural language what you want to achieve, and CLAI will try to find the right command.
 
-It takes into account your current shell and OS to provide the most relevant commands. However, you can also specify a different shell and OS
-to target a different environment.
+It takes into account your current shell and operating system to provide the most relevant commands. 
+However, you can also specify a different shell and OS to target a different environment.
 
 ## Examples
 
@@ -23,14 +23,19 @@ Rename all files with .yml extension to .yaml in the current directory.
 $ Get-ChildItem *.yml | Rename-Item -NewName {$_.BaseName+'.yaml'}
 ```
 
+## Installation
+
+Just download a pre-compiled binary for your system (macOS, Linux, Windows) from the [releases page](https://github.com/pteich/clai/releases).
+You only need to unpack the archive and run the binary in a terminal of your choice.
+
 ## OpenAI API
 
 CLAI uses the OpenAI API to generate the commands. Per default, it uses Groq with the "llama3-70b-8192" model.
-You need to provide a valid token to use the API (either per config file, see below or ENV CLAI_TOKEN).
+You need to provide a valid token to use the API (either per config file, see below or environment variable CLAI_TOKEN).
 
-To use OpenAI, provide an empty endpoint or use https://api.openai.com/v1 and a valid model.
+To use OpenAI, provide an empty endpoint or use https://api.openai.com/v1 and a valid OpenAI model.
 
-You can use any OpenAI compatible API.
+You can also provide a custom endpoint, to use any OpenAI compatible API.
 
 ## Config
 
