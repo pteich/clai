@@ -63,3 +63,7 @@ All values can also be set using environment variables. The following environmen
 - `CLAI_OS`
 
 At least a token is required.
+
+## Credits
+
+Original idea found at https://gist.github.com/Sh4yy/3941bf5014bc8c980fad797d85149b65
