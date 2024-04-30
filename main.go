@@ -11,17 +11,19 @@ import (
 	"github.com/pteich/configstruct"
 
 	"github.com/pteich/clai/ai"
+	"github.com/pteich/clai/config"
+	"github.com/pteich/clai/styles"
 )
 
 func main() {
-	cfg := Config{
+	cfg := config.Config{
 		Endpoint: "https://api.groq.com/openai/v1",
 		Model:    "llama3-70b-8192",
 	}
 
 	opts := make([]configstruct.Option, 0)
 
-	configPath, err := FindConfigFile()
+	configPath, err := config.FindConfigFile()
 	if err == nil {
 		opts = append(opts, configstruct.WithYamlConfig(configPath))
 	}
@@ -51,7 +53,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("\x1b[1;35m%s\x1b[0m", aiRes.Explanation)
-	fmt.Println()
-	fmt.Printf("\n\x1b[1;32m$ \x1b[0m%s\n", aiRes.Command)
+	fmt.Println(styles.Description.Render(aiRes.Explanation))
+	fmt.Println(styles.Prompt.Render("$ ") + styles.Command.Render(aiRes.Command))
 }
