@@ -9,13 +9,17 @@ import (
 	"syscall"
 
 	"github.com/pteich/configstruct"
+	"github.com/pterm/pterm"
+	"github.com/pterm/pterm/putils"
 
 	"github.com/pteich/clai/ai"
 	"github.com/pteich/clai/config"
-	"github.com/pteich/clai/styles"
 )
 
 func main() {
+	var aiRes ai.Response
+	var err error
+
 	cfg := config.Config{
 		Endpoint: "https://api.groq.com/openai/v1",
 		Model:    "llama3-70b-8192",
@@ -44,15 +48,22 @@ func main() {
 	defer cancel()
 
 	aiClient := ai.New(cfg.Token, cfg.Endpoint, cfg.Model, cfg.Shell, cfg.OS)
-
 	phrase := strings.Join(os.Args[1:], " ")
 
-	aiRes, err := aiClient.Ask(ctx, phrase)
+	err = putils.RunWithDefaultSpinner("🤖 Thinking...", func(spinner *pterm.SpinnerPrinter) error {
+		aiRes, err = aiClient.Ask(ctx, phrase)
+		if err != nil {
+			return err
+		}
+
+		return nil
+	})
 	if err != nil {
-		fmt.Println("Failed to get AI response:", err)
+		pterm.Println(err)
 		os.Exit(1)
 	}
 
-	fmt.Println(styles.Description.Render(aiRes.Explanation))
-	fmt.Println(styles.Prompt.Render("$ ") + styles.Command.Render(aiRes.Command))
+	pterm.Println(pterm.Magenta(aiRes.Explanation))
+	pterm.Println()
+	pterm.Println(pterm.Green("$ ") + aiRes.Command)
 }
