@@ -1,4 +1,4 @@
-# CLAI - AI Assistant for CLI Commands
+# 🤖 CLAI - AI Assistant for CLI Commands
 
 CLAI is an AI assistant for CLI commands. It is designed to help users to work with CLI commands more efficiently. 
 How often do you struggle to remember how to execute a specific command? Or what the right flags and arguments are?
@@ -10,7 +10,7 @@ However, you can also specify a different shell and OS to target a different env
 ## Examples
 
 ```shell
-./clai set up a ssh tunnel to be able to connect to MySQL on my remote server
+./clai set up an ssh tunnel to be able to connect to MySQL on my remote server
 Set up an SSH tunnel to remotely connect to a MySQL server on port 3306, forwarded to localhost:3307
 
 $ ssh -L 3307:localhost:3306 username@remote_server -N
