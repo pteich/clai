@@ -28,6 +28,16 @@ $ Get-ChildItem *.yml | Rename-Item -NewName {$_.BaseName+'.yaml'}
 Just download a pre-compiled binary for your system (macOS, Linux, Windows) from the [releases page](https://github.com/pteich/clai/releases).
 You only need to unpack the archive and run the binary in a terminal of your choice.
 
+There are also pre-build DEB, RPM and APK packages.
+
+### Homebrew installation
+
+You can also use Homebrew (https://brew.sh/) to install using my "Tap" repository:
+```shell
+brew tap pteich/tap
+brew install clai
+```
+
 ## OpenAI API
 
 CLAI uses the OpenAI API to generate the commands. Per default, it uses Groq with the "llama3-70b-8192" model.
