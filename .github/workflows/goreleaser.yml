@@ -28,9 +28,9 @@ jobs:
         uses: google-github-actions/release-please-action@v4
         id: release
         with:
-          command: manifest
           token: ${{secrets.GITHUB_TOKEN}}
-          default-branch: main
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
 
   goreleaser:
     needs:
