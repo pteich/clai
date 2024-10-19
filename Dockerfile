@@ -1,6 +1,6 @@
 FROM alpine:latest
-LABEL org.opencontainers.image.source https://github.com/pteich/elastic-query-export
+LABEL org.opencontainers.image.source https://github.com/pteich/clai
 
-COPY elastic-query-export /usr/bin/elastic-query-export
+COPY clai /usr/bin/clai
 
-ENTRYPOINT ["/usr/bin/elastic-query-export"]
+ENTRYPOINT ["/usr/bin/clai"]
