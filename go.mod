@@ -5,7 +5,7 @@ go 1.22
 require (
 	github.com/pteich/configstruct v1.6.0
 	github.com/pterm/pterm v0.12.79
-	github.com/sashabaranov/go-openai v1.23.0
+	github.com/sashabaranov/go-openai v1.32.0
 )
 
 require (

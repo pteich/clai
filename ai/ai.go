@@ -24,6 +24,8 @@ func New(token string, endpoint string, model string, shell string, platform str
 		clientConfig.BaseURL = endpoint
 	}
 
+	clientConfig.AssistantVersion = "v2"
+
 	client := openai.NewClientWithConfig(clientConfig)
 
 	if platform != "" {
