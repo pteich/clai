@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/pteich/clai/compare/v0.1.3...v0.1.4) (2024-10-19)
+
+
+### Bug Fixes
+
+* Dockerfile ([29756b9](https://github.com/pteich/clai/commit/29756b9bdf08eb0b240f4b9ba906f2412a58c235))
+
 ## [0.1.3](https://github.com/pteich/clai/compare/v0.1.2...v0.1.3) (2024-10-19)
 
 
