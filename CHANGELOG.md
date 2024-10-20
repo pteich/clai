@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/pteich/clai/compare/v0.1.4...v0.1.5) (2024-10-19)
+
+
+### Other
+
+* update README with information about Homebrew installation ([c398f44](https://github.com/pteich/clai/commit/c398f44184892d191c797197a96608f766835f97))
+
 ## [0.1.4](https://github.com/pteich/clai/compare/v0.1.3...v0.1.4) (2024-10-19)
 
 
